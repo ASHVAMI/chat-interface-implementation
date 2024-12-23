@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --message-blue: #3b82f6;
+  --message-gray: #f3f4f6;
+}
+
+.message-bubble {
+  @apply rounded-2xl px-4 py-2 max-w-[80%];
+}
+
+.message-bubble.sent {
+  @apply bg-[var(--message-blue)] text-white ml-auto rounded-br-sm;
+}
+
+.message-bubble.received {
+  @apply bg-[var(--message-gray)] dark:bg-gray-800 rounded-bl-sm;
+}
+
+.message-bubble.system {
+  @apply bg-blue-50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-100 
+         text-center max-w-full mx-auto text-sm py-1.5;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
